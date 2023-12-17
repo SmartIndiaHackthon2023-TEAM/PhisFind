@@ -1,0 +1,11 @@
+FROM python
+
+WORKDIR /app
+
+COPY ./Sms_Model /app
+
+RUN pip install flask
+RUN pip install flask_cors
+RUN pip install Scikit-learn
+
+CMD ["python", "web_part.py"]
