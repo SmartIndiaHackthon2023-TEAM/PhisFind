@@ -7,6 +7,9 @@ COPY ./Url_Model /app/backend/url
 RUN pip install flask
 RUN pip install flask_cors
 RUN pip install Scikit-learn
+RUN pip install tld
+RUN pip install googlesearch-python
+
 
 EXPOSE 8888
 
