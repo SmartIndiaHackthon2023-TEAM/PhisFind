@@ -17,8 +17,11 @@ const adminSchema = mongoose.Schema({
 });
 
 const Admin = mongoose.model("Admin", adminSchema);
+require('dotenv').config();
 
-mongoose.connect("mongodb+srv://ShashwatPS:1@cluster0.1alkv6j.mongodb.net/", {
+const mongoURI = process.env.MONGO_URI;
+
+mongoose.connect(mongoURI, {
 });
 
 let InputProps = z.object({
