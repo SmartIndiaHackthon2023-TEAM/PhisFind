@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 import jwt from "jsonwebtoken";
 const app = express();
 import { z } from "zod";
+import dotenv from 'dotenv';
 
 app.use(bodyParser.json());
 app.use(cors({origin : '*'}));
@@ -17,8 +18,8 @@ const adminSchema = mongoose.Schema({
 });
 
 const Admin = mongoose.model("Admin", adminSchema);
-require('dotenv').config();
 
+dotenv.config();
 const mongoURI = process.env.MONGO_URI;
 
 mongoose.connect(mongoURI, {
