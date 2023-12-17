@@ -1,11 +1,14 @@
 FROM python
 
-WORKDIR /app
+WORKDIR /app/backend/sms
 
-COPY ./Sms_Model /app
+COPY ./Sms_Model /app/backend/sms
 
 RUN pip install flask
 RUN pip install flask_cors
 RUN pip install Scikit-learn
+RUN pip install nltk
+
+EXPOSE 8080
 
 CMD ["python", "web_part.py"]

@@ -1,11 +1,13 @@
 FROM python
 
-WORKDIR /app
+WORKDIR /app/backend/url
 
-COPY ./Url_Model /app
+COPY ./Url_Model /app/backend/url
 
 RUN pip install flask
 RUN pip install flask_cors
 RUN pip install Scikit-learn
+
+EXPOSE 8888
 
 CMD ["python", "web_part.py"]
